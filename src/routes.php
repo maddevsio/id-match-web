@@ -43,7 +43,7 @@ $app->post('/', function ($request, $response, $args) {
         throw new Exception('Вы не зааплоадили айдишку');
     }
 
-    exec("./idmatch -c $faceFilePath $idFilePath", $output);
+    exec("./idmatchd -c $faceFilePath $idFilePath", $output);
     $idmResult = $output[2];
 
     if ($idmResult == "200 1") {
