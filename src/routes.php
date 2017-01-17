@@ -22,7 +22,7 @@ $app->post('/', function ($request, $response, $args) {
         $faceFilePath = "/tmp/{$rand}-{$uploadFileName}";
         $files['face']->moveTo($faceFilePath);
     } else {
-        throw new Exception($files['face']->getError());
+        throw new Exception($files['face']);
     }
 
     if ($files['id']->getError() === UPLOAD_ERR_OK) {
