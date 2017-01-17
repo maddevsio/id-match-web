@@ -21,6 +21,8 @@ $app->post('/', function ($request, $response, $args) {
         $rand = md5(microtime(true));
         $faceFilePath = "/tmp/{$rand}-{$uploadFileName}";
         $files['face']->moveTo($faceFilePath);
+    } else {
+        throw new Exception($files['face']->getError());
     }
 
     if ($files['id']->getError() === UPLOAD_ERR_OK) {
