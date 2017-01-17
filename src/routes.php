@@ -22,7 +22,7 @@ $app->post('/', function ($request, $response, $args) {
         $faceFilePath = "/tmp/{$rand}-{$uploadFileName}";
         $files['face']->moveTo($faceFilePath);
     } else {
-        throw new Exception($files['face']);
+        throw new Exception("Ошибка загрузки файла лица");
     }
 
     if ($files['id']->getError() === UPLOAD_ERR_OK) {
@@ -30,6 +30,8 @@ $app->post('/', function ($request, $response, $args) {
         $rand = md5(microtime(true));
         $idFilePath = "/tmp/{$rand}-{$uploadFileName}";
         $files['id']->moveTo($idFilePath);
+    } else {
+        throw new Exception("Ошибка загрузки файла айдишки");
     }
 
     if (empty($faceFilePath)) {
