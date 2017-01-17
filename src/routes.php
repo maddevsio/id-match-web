@@ -37,7 +37,18 @@ $app->post('/', function ($request, $response, $args) {
         throw new Exception('Вы не зааплоадили айдишку');
     }
 
+    exec("./idmatch -c $faceFilePath $idFilePath", $output);
+    $idmResult = $output[2];
 
+    if ($idmResult == "200 1") {
+        print("СОВПАДЕНИЕ");
+    }
+    if ($idmResult == "200 0") {
+        print("Возможное совпадение");
+    }
+    if ($idmResult == "200 -1") {
+        print("Не совпадают");
+    }
 
     return $this->renderer->render($response, 'index.phtml', $args);
 });
