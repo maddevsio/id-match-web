@@ -43,6 +43,8 @@ $app->post('/', function ($request, $response, $args) {
         throw new Exception('Вы не зааплоадили айдишку');
     }
 
+    ///////////
+
     exec("./idmatchd -c $faceFilePath $idFilePath", $output);
     $idmResult = $output[2];
 
@@ -55,6 +57,14 @@ $app->post('/', function ($request, $response, $args) {
     if ($idmResult == "200 -1") {
         print("Не совпадают");
     }
+
+    $outPic = md5(microtime(true)).".png";
+    exec("./idcardocr $idFilePath ./public/images/$outPic", $output);
+    foreach ($output as $line) {
+        print("$line<br>");
+    }
+
+    $args['outPic'] = $outPic;
 
     return $this->renderer->render($response, 'index.phtml', $args);
 });
