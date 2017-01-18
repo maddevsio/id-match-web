@@ -1,6 +1,8 @@
 /vendor/
 /logs/*
+/public/images/*
 !/logs/README.md
+!/public/images/id.png
 .idea/
 composer.lock
 idmatchd
