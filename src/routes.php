@@ -46,7 +46,7 @@ $app->post('/', function ($request, $response, $args) {
     ///////////
 
     exec("./idmatchd -c $faceFilePath $idFilePath", $output);
-    $idmResult = $output[2];
+    $idmResult = $output[0];
 
     if ($idmResult == "200 1") {
         print("СОВПАДЕНИЕ");
@@ -57,6 +57,8 @@ $app->post('/', function ($request, $response, $args) {
     if ($idmResult == "200 -1") {
         print("Не совпадают");
     }
+
+    print("<br><br><b>РАСПОЗНАННЫЕ ДАННЫЕ С АЙДИШКИ:</b><br>");
 
     $outPic = md5(microtime(true)).".png";
     exec("./idcardocr $idFilePath ./public/images/$outPic", $output);
