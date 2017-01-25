@@ -45,7 +45,7 @@ $app->post('/', function ($request, $response, $args) {
 
     ///////////
 
-    exec("./idmatchd -c $faceFilePath $idFilePath", $output);
+    exec("idmatchd -c $faceFilePath $idFilePath", $output);
     $idmResult = $output[0];
 
     if ($idmResult == "200 1") {
@@ -61,7 +61,7 @@ $app->post('/', function ($request, $response, $args) {
     print("<br><br><b>РАСПОЗНАННЫЕ ДАННЫЕ С АЙДИШКИ:</b><br>");
 
     $outPic = md5(microtime(true)).".png";
-    exec("./idcardocr $idFilePath ./public/images/$outPic", $output);
+    exec("idcardocr $idFilePath ./public/images/$outPic", $output);
     foreach ($output as $line) {
         print("$line<br>");
     }
