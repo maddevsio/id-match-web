@@ -61,12 +61,18 @@ $app->post('/', function ($request, $response, $args) {
     print("<br><br><b>РАСПОЗНАННЫЕ ДАННЫЕ С АЙДИШКИ:</b><br>");
 
     $outPic = md5(microtime(true)).".png";
+    $outPicF = md5(microtime(true))."F.png";
     exec("idcardocr $idFilePath ./public/images/$outPic", $output);
     foreach ($output as $line) {
         print("$line<br>");
     }
 
+    // рисуем регион на лице
+    exec("idmatchd -a $faceFilePath ./public/images/$outPicF");
+    exec("idmatchd -b ./public/images/$outPic ./public/images/$outPic");
+
     $args['outPic'] = $outPic;
+    $args['outPicF'] = $outPicF;
 
     return $this->renderer->render($response, 'index.phtml', $args);
 });
