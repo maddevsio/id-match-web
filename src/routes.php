@@ -62,7 +62,7 @@ $app->post('/', function ($request, $response, $args) {
 
     $outPic = md5(microtime(true)).".png";
     $outPicF = md5(microtime(true))."F.png";
-    exec("idcardocr $idFilePath ./public/images/$outPic", $output);
+    exec("idcardocr $idFilePath ./public/images/$outPic | node ./region-kir.js", $output);
     foreach ($output as $line) {
         print("$line<br>");
     }
