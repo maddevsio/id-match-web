@@ -6,6 +6,10 @@ $app->get('/', function ($request, $response, $args) {
     return $this->renderer->render($response, 'index.phtml', $args);
 });
 
+$app->get('/new', function ($request, $response, $args) {
+    return $this->renderer->render($response, 'new.phtml', $args);
+});
+
 $app->post('/', function ($request, $response, $args) {
     $files = $request->getUploadedFiles();
     if (empty($files['face'])) {

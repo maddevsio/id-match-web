@@ -8,3 +8,4 @@ composer.lock
 idmatchd
 idcardocr
 .DS_Store
+/node_modules/
