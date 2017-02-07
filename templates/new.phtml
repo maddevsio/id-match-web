@@ -1,77 +1,128 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=0">
-        <meta name="format-detection" content="telephone=no">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
 
-        <title>NEW ID Match</title>
-        <link rel="stylesheet" href="./dist/styles.css">
-    </head>
-    <body>
-        <header>
-            <section>
-                <div class="menu">
-                    <a href="/" class="logotype">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" href="26d" viewBox="0 0 36 26"><defs><style>.cls-1{fill:#fff;}</style></defs><title>logo_id</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon class="cls-1" points="0 26 9.36 26 14.4 0 5.04 0 0 26"/><path class="cls-1" d="M23,0H17V26h6v-.08A13.06,13.06,0,0,0,36,13,13.06,13.06,0,0,0,23,0Z"/></g></g></svg>
-                        IDMatch
-                    </a>
-                    <ul class="munu-wrap">
-                        <li class="menu-wrap--item">
-                            <a href="#contacts">Контакты</a>
-                        </li>
-                    </ul>
-                </div>
-                <h1>
-                    Это AI fintech API
-                </h1>
-                <div class="description">
-                    Система принимет изображение лица и изображение пасспорта (айди карты) человека, а на выходе выдает процент матчинга лица на пасспорте и распознанный текст с пасспорта в формате JSON
-                </div>
-                <div class="console-curl">
-                    $ curl -i -X POST -H "Content-Type: multipart/form-data" -F "face=@face-photo.png;id=id-scan.png" https://idmatch.co:8080/match-and-ocr
-                </div>
-            </section>
-        </header>
-        <main>
-            
-        </main>
-        <footer id="contacts">
-
-        </footer>
-
-
-
-
-        <h1>ID Match</h1>
-        <div>
-            <p style="color:red;">Это AI fintech API.</p>
-            <p>
-                Система принимет изображение лица и изображение пасспорта (айди карты) человека, а на выходе выдает следующую информацию:<br>
-                <span style="color:blue;">процент матчинга лица на пасспорте</span>,
-                <span style="color:green;">распознанный текст с пасспорта</span>
-            </p>
-            <p style="color:black;margin-top: 50px;">Давайте проверим как это работает</p>
-            <p style="margin-top:30px;">
-                <form method="POST" action="/" enctype="multipart/form-data">
-                    <label>Загрузите вашу фотографию:</label>
-                    <input type="file" name="face">
-                    <p></p>
-                    <label>Загрузите скан вашего пасспорта:</label>
-                    <input type="file" name="id">
-                    <p></p>
-                    <button type="submit">Отправить в ИИ</button>
-                </form>
-            </p>
-
-            <p>
-                <?php if (isset($outPic)) : ?>
-                    <img src="/images/<?= htmlspecialchars($outPicF); ?>">
-                    <br><br>
-                    <img src="/images/<?= htmlspecialchars($outPic); ?>">
-                <?php endif; ?>
-            </p>
-
+    <title>NEW ID Match</title>
+    <link rel="stylesheet" href="./dist/styles.css">
+</head>
+<body>
+<header>
+    <section>
+        <div class="menu">
+            <a href="/" class="logotype">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" href="26d" viewBox="0 0 36 26">
+                    <defs>
+                        <style>.cls-1 {
+                                fill: #fff;
+                            }</style>
+                    </defs>
+                    <title>logo_id</title>
+                    <g id="Layer_2" data-name="Layer 2">
+                        <g id="Layer_1-2" data-name="Layer 1">
+                            <polygon class="cls-1" points="0 26 9.36 26 14.4 0 5.04 0 0 26"/>
+                            <path class="cls-1" d="M23,0H17V26h6v-.08A13.06,13.06,0,0,0,36,13,13.06,13.06,0,0,0,23,0Z"/>
+                        </g>
+                    </g>
+                </svg>
+                IDMatch
+            </a>
+            <ul class="munu-wrap">
+                <li class="menu-wrap--item">
+                    <a href="#contacts">Контакты</a>
+                </li>
+            </ul>
         </div>
-    </body>
+        <h1>
+            Это AI fintech API
+        </h1>
+        <div class="description">
+            Система принимет изображение лица и изображение пасспорта (айди карты) человека, а на выходе выдает процент
+            матчинга лица на пасспорте и распознанный текст с пасспорта в формате JSON
+        </div>
+        <div class="console-curl">
+            $ curl -i -X POST -H "Content-Type: multipart/form-data" -F "face=@face-photo.png;id=id-scan.png"
+            https://idmatch.co:8080/match-and-ocr
+        </div>
+        <div class="inst">
+            <div class="inst-info">
+                <div class="inst-info--prev">
+                    <img class="place-bg" srcset="./icons/prev.png" alt="My default image">
+                </div>
+                <div class="inst-info-text">
+                    Распознаный&nbsp текст с ID карты &nbspв JSON
+                </div>
+            </div>
+            <img src="./icons/img-arr.svg" alt="">
+            <div class="inst-info--console">
+                <div class="inst-info--console_header">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="code-snippet__content">
+                    <div class="line-numbers">
+                        1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>
+                    </div>
+                    <code class="lines">
+                    { <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"serial": "<span class="string">0241456789</span>,<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"firstname": "<span class="string">Александра</span>",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"surname": "<span class="string">Александрова</span>",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"secondname": "<span class="string">Александровна</span>",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"pob": "<span class="string">Петропавловск</span>",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"birthday": "<span class="string">22.03.1987</span>",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"date1": "<span class="string">12.03.2013</span>",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"gender": "<span class="string">Ж</span>"<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"code": "<span class="string">200</span>",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"message": "<span class="string">Match</span>",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"int": "<span class="string">1</span>",<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;"float": "<span class="string">58.514</span>"<br>
+                    }
+                    </code>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
+<main>
+
+</main>
+<footer id="contacts">
+
+    <h1>ID Match</h1>
+    <div>
+        <p style="color:red;">Это AI fintech API.</p>
+        <p>
+            Система принимет изображение лица и изображение пасспорта (айди карты) человека, а на выходе выдает следующую
+            информацию:<br>
+            <span style="color:blue;">процент матчинга лица на пасспорте</span>,
+            <span style="color:green;">распознанный текст с пасспорта</span>
+        </p>
+        <p style="color:black;margin-top: 50px;">Давайте проверим как это работает</p>
+        <p style="margin-top:30px;">
+            <form method="POST" action="/" enctype="multipart/form-data">
+                <label>Загрузите вашу фотографию:</label>
+                <input type="file" name="face">
+        <p></p>
+        <label>Загрузите скан вашего пасспорта:</label>
+        <input type="file" name="id">
+        <p></p>
+        <button type="submit">Отправить в ИИ</button>
+        </form>
+        </p>
+
+        <p>
+            <?php if (isset($outPic)) : ?>
+                <img src="/images/<?= htmlspecialchars($outPicF); ?>">
+                <br><br>
+                <img src="/images/<?= htmlspecialchars($outPic); ?>">
+            <?php endif; ?>
+        </p>
+
+    </div>
+</footer>
+</body>
 </html>
