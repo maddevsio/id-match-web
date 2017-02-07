@@ -21,3 +21,19 @@
     text-decoration: none;
   }
 }
+.description{
+  text-align: center;
+  max-width: 850px;
+  width: 100%;
+  margin: 40px auto;
+  line-height: 1.4;
+  font-size: 1.1rem;
+}
+.console-curl{
+  font-family: 'Lucon-Console', sans-serif;
+  margin-bottom: 80px;
+  font-size: .8rem;
+  text-align: left;
+  background: #000000;
+  padding: 15px 5px 15px 3px;
+}

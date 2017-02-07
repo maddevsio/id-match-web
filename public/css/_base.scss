@@ -3,10 +3,11 @@ html {
 }
 body{
   display: flex;
+  font-size: 17px;
   flex-direction: column;
   min-height: 100%;
   align-items: center;
-  font-family: 'Raleway-Regular', sans-serif;
+  font-family: 'Raleway-Light', sans-serif;
 }
 main{
   flex: 1;

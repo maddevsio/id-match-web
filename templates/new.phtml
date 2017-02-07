@@ -25,6 +25,12 @@
                 <h1>
                     Это AI fintech API
                 </h1>
+                <div class="description">
+                    Система принимет изображение лица и изображение пасспорта (айди карты) человека, а на выходе выдает процент матчинга лица на пасспорте и распознанный текст с пасспорта в формате JSON
+                </div>
+                <div class="console-curl">
+                    $ curl -i -X POST -H "Content-Type: multipart/form-data" -F "face=@face-photo.png;id=id-scan.png" https://idmatch.co:8080/match-and-ocr
+                </div>
             </section>
         </header>
         <main>
