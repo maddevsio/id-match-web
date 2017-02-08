@@ -92,50 +92,15 @@
     </section>
 </header>
 <main>
-
-
-    {
-    "OCR": {
-        "serial": "0241456789",
-        "firstname": "Александра",
-        "surname": "Александрова",
-        "secondname": "Александровна",
-        "pob": "Петропавловск",
-        "birthday": "22.03.1987",
-        "date1": "12.03.2013",
-        "gender": "Ж"
-    },
-    "Match": {
-        "code": "200",
-        "message": "Match",
-        "int": "1",
-        "float": "58.514"
-        }
-    }
-</main>
-<footer id="contacts">
-
-    <h1>ID Match</h1>
-    <div>
-        <p style="color:red;">Это AI fintech API.</p>
-        <p>
-            Система принимет изображение лица и изображение пасспорта (айди карты) человека, а на выходе выдает следующую
-            информацию:<br>
-            <span style="color:blue;">процент матчинга лица на пасспорте</span>,
-            <span style="color:green;">распознанный текст с пасспорта</span>
-        </p>
-        <p style="color:black;margin-top: 50px;">Давайте проверим как это работает</p>
-        <p style="margin-top:30px;">
-            <form method="POST" action="/" enctype="multipart/form-data">
-                <label>Загрузите вашу фотографию:</label>
-                <input type="file" name="face">
-        <p></p>
-        <label>Загрузите скан вашего пасспорта:</label>
-        <input type="file" name="id">
-        <p></p>
-        <button type="submit">Отправить в ИИ</button>
+    <div class="title">Как это работает</div>
+    <section>
+        <form method="POST" action="/" enctype="multipart/form-data">
+            <label>Загрузите вашу фотографию:</label>
+            <input type="file" name="face">
+            <label>Загрузите скан вашего пасспорта:</label>
+            <input type="file" name="id">
+            <button type="submit">Отправить в ИИ</button>
         </form>
-        </p>
 
         <p>
             <?php if (isset($outPic)) : ?>
@@ -144,6 +109,10 @@
                 <img src="/images/<?= htmlspecialchars($outPic); ?>">
             <?php endif; ?>
         </p>
+    </section>
+</main>
+<footer id="contacts">
+
 
     </div>
 </footer>

@@ -18,6 +18,9 @@ header{
   width: 100%;
   color: #ffffff;
 }
+footer{
+  height: 90px;
+}
 section{
   max-width: 1100px;
   width: 100%;
@@ -28,4 +31,11 @@ h1{
   font-family: 'RobotoSlab-Light', sans-serif;
   font-size: 2rem;
   text-align: center;
+}
+.title{
+  font-family: 'RobotoSlab-Light', sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  color: #3360a3;
+  margin: 50px auto 40px;
 }
