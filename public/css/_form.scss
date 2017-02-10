@@ -1,0 +1,42 @@
+.documents-form{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.input-wrap{
+  .inputfile{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+  &.my_scan{
+
+  }
+}
+.input-wrap label {
+  color: white;
+
+  display: inline-block;
+}
+.input-wrap:focus  label,
+.input-wrap  label:hover {
+
+}
+.submit{
+  width: 100%;
+  display: flex;
+  button{
+    background: #3360a3;
+    padding: 20px 35px;
+    margin: 40px auto;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+  }
+}
+

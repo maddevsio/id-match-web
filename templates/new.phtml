@@ -14,17 +14,9 @@
         <div class="menu">
             <a href="/" class="logotype">
                 <svg xmlns="http://www.w3.org/2000/svg" width="36" href="26d" viewBox="0 0 36 26">
-                    <defs>
-                        <style>.cls-1 {
-                                fill: #fff;
-                            }</style>
-                    </defs>
-                    <title>logo_id</title>
-                    <g id="Layer_2" data-name="Layer 2">
-                        <g id="Layer_1-2" data-name="Layer 1">
-                            <polygon class="cls-1" points="0 26 9.36 26 14.4 0 5.04 0 0 26"/>
-                            <path class="cls-1" d="M23,0H17V26h6v-.08A13.06,13.06,0,0,0,36,13,13.06,13.06,0,0,0,23,0Z"/>
-                        </g>
+                    <g id="Layer_1-2" data-name="Layer 1">
+                        <polygon fill="#ffffff" points="0 26 9.36 26 14.4 0 5.04 0 0 26"/>
+                        <path fill="#ffffff" d="M23,0H17V26h6v-.08A13.06,13.06,0,0,0,36,13,13.06,13.06,0,0,0,23,0Z"/>
                     </g>
                 </svg>
                 IDMatch
@@ -42,20 +34,15 @@
             Система принимет изображение лица и изображение пасспорта (айди карты) человека, а на выходе выдает процент
             матчинга лица на пасспорте и распознанный текст с пасспорта в формате JSON
         </div>
-        <div class="console-curl">
-            $ curl -i -X POST -H "Content-Type: multipart/form-data" -F "face=@face-photo.png;id=id-scan.png"
-            https://idmatch.co:8080/match-and-ocr
+        <div id="terminal">
+            <div id="typed-strings">
+                <p>
+                    <i>$</i> curl -i -X POST -H "Content-Type: multipart/form-data" -F "face=@your-face-photo.png;id=your-sid-scan.png" https://idmatch.co:8080/match-and-ocr
+                    <br>
+                </p>
+            </div>
         </div>
         <div class="inst">
-            <div class="inst-info">
-                <div class="inst-info--prev">
-                    <img class="place-bg" srcset="./icons/prev.png" alt="My default image">
-                </div>
-                <div class="inst-info-text">
-                    Распознаный&nbsp текст с ID карты &nbspв JSON
-                </div>
-            </div>
-            <img src="./icons/img-arr.svg" alt="">
             <div class="inst-info--console">
                 <div class="inst-info--console_header">
                     <span></span>
@@ -63,58 +50,79 @@
                     <span></span>
                 </div>
                 <div class="code-snippet__content">
-                    <div class="line-numbers">
-                        1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>
-                    </div>
                     <code class="lines">
-                        {<br>
-                        &nbsp;&nbsp;"OCR": { <br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;"serial": "<span class="string">0241456789</span>,<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;"firstname": "<span class="string">Александра</span>",<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;"surname": "<span class="string">Александрова</span>",<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;"secondname": "<span class="string">Александровна</span>",<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;"pob": "<span class="string">Петропавловск</span>",<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;"birthday": "<span class="string">22.03.1987</span>",<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;"date1": "<span class="string">12.03.2013</span>",<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;"gender": "<span class="string">Ж</span>"<br>
-                        &nbsp;&nbsp;}, <br>
-                        &nbsp;&nbsp;"Match": { <br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;"code": "<span class="string">200</span>",<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;"message": "<span class="string">Match</span>",<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;"int": "<span class="string">1</span>",<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;"float": "<span class="string">58.514</span>"<br>
-                        &nbsp;&nbsp;} <br>
-                        }
+                        <span id="typed"></span>
+                        <span id="dots"></span>
+                        <span class="json_wrap">
+                            {<br>
+                            &nbsp;&nbsp;"OCR": { <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"serial": "<span class="string">0241456789</span>,<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"firstname": "<span class="string">Александра</span>",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"surname": "<span class="string">Александрова</span>",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"secondname": "<span class="string">Александровна</span>",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"pob": "<span class="string">Петропавловск</span>",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"birthday": "<span class="string">22.03.1987</span>",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"date1": "<span class="string">12.03.2013</span>",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"gender": "<span class="string">Ж</span>"<br>
+                            &nbsp;&nbsp;}, <br>
+                            &nbsp;&nbsp;"Match": { <br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"code": "<span class="string">200</span>",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"message": "<span class="string">Match</span>",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"int": "<span class="string">1</span>",<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;"float": "<span class="string">58.514</span>"<br>
+                            &nbsp;&nbsp;} <br>
+                            }<br>
+                            <span class="my-cursor">█</span>
+                        </span>
                     </code>
+                    <div class="inst-info">
+                        <div class="inst-info--prev">
+                            <img class="place-bg" srcset="./icons/prev.png" alt="My default image">
+                        </div>
+                        <div class="inst-info-text">
+                            Распознаный&nbsp текст с ID карты &nbspв JSON
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 </header>
 <main>
-    <div class="title">Как это работает</div>
     <section>
-        <form method="POST" action="/" enctype="multipart/form-data">
-            <label>Загрузите вашу фотографию:</label>
-            <input type="file" name="face">
-            <label>Загрузите скан вашего пасспорта:</label>
-            <input type="file" name="id">
-            <button type="submit">Отправить в ИИ</button>
+        <div class="title">Как это работает</div>
+        <form class="documents-form" method="POST" action="/" enctype="multipart/form-data">
+            <div id="photo" class="input-wrap my_photo">
+                <label for="face">Загрузите вашу фотографию</label>
+                <input class="inputfile" type="file" id="face" name="face">
+            </div>
+            <div class="input-wrap my_scan">
+                <label for="id">Загрузите изображение вашего документа</label>
+                <input class="inputfile" type="file" id="id" name="id">
+            </div>
+            <div class="submit">
+                <button type="submit">Отправить в ИИ</button>
+            </div>
         </form>
-
         <p>
-            <?php if (isset($outPic)) : ?>
-                <img src="/images/<?= htmlspecialchars($outPicF); ?>">
-                <br><br>
-                <img src="/images/<?= htmlspecialchars($outPic); ?>">
-            <?php endif; ?>
+        <?php if (isset($outPic)) : ?>
+            <img src="/images/<?= htmlspecialchars($outPicF); ?>">
+            <br><br>
+            <img src="/images/<?= htmlspecialchars($outPic); ?>">
+        <?php endif; ?>
         </p>
+        <div class="camera">
+            <video id="video">Video stream not available.</video>
+            <button id="startbutton">Take photo</button>
+        </div>
+        <canvas id="canvas">
+        </canvas>
     </section>
 </main>
 <footer id="contacts">
-
-
-    </div>
+    <script src="./js/jquery-3.1.1.min.js"></script>
+    <script src="./js/typed.min.js"></script>
+    <script src="./js/scripts.js"></script>
 </footer>
 </body>
 </html>
