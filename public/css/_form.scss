@@ -63,15 +63,16 @@
   }
 }
 .arrows{
+  transition: all 1s;
   margin-left: -60px;
-  transition: fill-opacity .5s;
+  //transition: fill-opacity .5s;
   path{
     fill-opacity: 0;
+    transition: all 1s;
   }
 }
 .arrows.animate{
   transition: all .5s;
-  fill-opacity: 1;
   transform: translateX(30px);
   path{
     transition: all .5s;
