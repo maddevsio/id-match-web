@@ -111,7 +111,7 @@
                     <img width="40px" src="../icons/id-card.svg" alt="">
                     <i data-message="Загрузите изображение вашего документа" class="filename">Загрузите изображение вашего документа</i>
                 </label>
-                <input class="inputfile" type="file" id="id" name="id">
+                <input disabled="disabled" class="inputfile" type="file" id="id" name="id">
             </div>
             <svg class="arrows" id="arrows_dock" xmlns="http://www.w3.org/2000/svg" width="50px" viewBox="0 0 756.19 477.18">
                 <g id="Capa_1" data-name="Capa 1">
@@ -121,7 +121,11 @@
                 </g>
             </svg>
             <div class="submit disabled">
-                <button type="submit">Отправить в ИИ</button>
+                <label for="submit_btn">
+                    <img width="40px" src="../icons/icon_reload.svg" alt="">
+                    <i>Отправить в ИИ</i>
+                </label>
+                <input type="submit" class="inputfile" disabled="disabled" id="submit_btn">
             </div>
         </form>
         <p>
@@ -141,6 +145,7 @@
 </main>
 <footer id="contacts">
     <script src="./js/jquery-3.1.1.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <script src="./js/typed.min.js"></script>
     <script src="./js/scripts.js"></script>
 </footer>

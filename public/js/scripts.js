@@ -92,6 +92,7 @@ $(function () {
     //     }
     // });
 });
+
 $(function () {
     $('#face').change(function () {
         var fileName = $(this).val();
@@ -104,10 +105,13 @@ $(function () {
             $('.my_scan').addClass('disabled');
             $('#arrows_dock').removeClass('animate');
             $('.submit').addClass('disabled');
+            $('#id').attr('disabled', true);
+            $('#submit_btn').attr('disabled', true);
         }else{
             photo_label.addClass('add_item');
             $('#arrows').addClass('animate');
             $('.my_scan').removeClass('disabled');
+            $('#id').removeAttr('disabled')
         }
         photo_label.html(fileName);
         $('#id').trigger('change');
@@ -115,18 +119,38 @@ $(function () {
     $('#id').change(function () {
         var fileName = $(this).val();
         var dock_label = $(this).closest('#document').find(".filename");
-        fileName = fileName.replace('C:\\fakepath\\','');
         var photo_val = $('#face').val();
+        fileName = fileName.replace('C:\\fakepath\\','');
         if(!fileName && photo_val){
             dock_label.removeClass('add_item');
             fileName = dock_label.data('message');
             $('#arrows_dock').removeClass('animate');
             $('.submit').addClass('disabled');
+            $('#submit_btn').attr('disabled', true);
+        }
+        else if (!fileName){
+            fileName = dock_label.data('message');
+            $('.submit').addClass('disabled');
+            $('#submit_btn').attr('disabled', true);
         }else if(photo_val){
             dock_label.addClass('add_item');
             $('#arrows_dock').addClass('animate');
             $('.submit').removeClass('disabled');
+            $('#submit_btn').removeAttr('disabled');
         }
         dock_label.html(fileName);
+    });
+    $('label').click(function (e) {
+        var photo_val = $('#face').val();
+        var id_val = $('#id').val();
+        if($(e.target).closest('div').find('input').attr('disabled')){
+            if(!photo_val && !id_val){
+                $('#photo').effect( "shake" );
+            } else if(!id_val){
+                $('#document').effect( "shake" );
+            } else if(!photo_val){
+                $('#photo').effect( "shake" );
+            }
+        }
     });
 });
