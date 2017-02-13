@@ -23,7 +23,6 @@ $(function () {
     });
 });
 
-
 $(function () {
     var width = 320;
     var height = 0;
@@ -92,4 +91,42 @@ $(function () {
     //         }
     //     }
     // });
+});
+$(function () {
+    $('#face').change(function () {
+        var fileName = $(this).val();
+        var photo_label = $(this).closest('#photo').find(".filename");
+        fileName = fileName.replace('C:\\fakepath\\','') ;
+        if(!fileName){
+            photo_label.removeClass('add_item');
+            fileName = photo_label.data('message');
+            $('#arrows').removeClass('animate');
+            $('.my_scan').addClass('disabled');
+            $('#arrows_dock').removeClass('animate');
+            $('.submit').addClass('disabled');
+        }else{
+            photo_label.addClass('add_item');
+            $('#arrows').addClass('animate');
+            $('.my_scan').removeClass('disabled');
+        }
+        photo_label.html(fileName);
+        $('#id').trigger('change');
+    });
+    $('#id').change(function () {
+        var fileName = $(this).val();
+        var dock_label = $(this).closest('#document').find(".filename");
+        fileName = fileName.replace('C:\\fakepath\\','');
+        var photo_val = $('#face').val();
+        if(!fileName && photo_val){
+            dock_label.removeClass('add_item');
+            fileName = dock_label.data('message');
+            $('#arrows_dock').removeClass('animate');
+            $('.submit').addClass('disabled');
+        }else if(photo_val){
+            dock_label.addClass('add_item');
+            $('#arrows_dock').addClass('animate');
+            $('.submit').removeClass('disabled');
+        }
+        dock_label.html(fileName);
+    });
 });

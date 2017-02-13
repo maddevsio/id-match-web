@@ -1,33 +1,54 @@
 .documents-form{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
 }
-.input-wrap{
-  .inputfile{
-    width: 0.1px;
-    height: 0.1px;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: -1;
+.inputfile{
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+.my_photo, .my_scan{
+  width: 320px;
+  height: 90px;
+  label{
+    border-radius: 3px;
+    background: #30b76c;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    line-height: 1.35;
+    font-size: 16px;
+    color: #ffffff;
+    cursor: pointer;
+
+    .add_item{
+      white-space: nowrap;
+      overflow: hidden;
+      padding-right: 35px;
+      text-overflow: ellipsis;
+    }
+    img{
+      margin: auto 30px auto 10px;
+      border-right: 1px solid rgba(145, 220, 90, 0.61);
+      padding: 20px;
+    }
   }
-  &.my_scan{
-
+}
+.my_scan{
+  label{
+    background: #fac478;
+    img{
+      border-right: 1px solid rgba(166, 124, 84, 0.6);
+    }
   }
-}
-.input-wrap label {
-  color: white;
-
-  display: inline-block;
-}
-.input-wrap:focus  label,
-.input-wrap  label:hover {
-
 }
 .submit{
-  width: 100%;
   display: flex;
   button{
     background: #3360a3;
@@ -39,4 +60,28 @@
     border: none;
   }
 }
-
+.disabled{
+  opacity: .5;
+  pointer-events: none;
+}
+.arrows{
+  margin-left: -60px;
+  path{
+    fill-opacity: 0;
+  }
+}
+.arrows.animate{
+  transition: all .5s;
+  fill-opacity: 1;
+  transform: translateX(30px);
+  path{
+    transition: all .5s;
+    fill-opacity: 1;
+    fill: #30b76c;
+  }
+}
+#arrows_dock.animate{
+  path{
+    fill: #fac478;
+  }
+}
