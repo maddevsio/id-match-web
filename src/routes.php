@@ -2,11 +2,11 @@
 
 error_reporting(E_ALL);
 
-$app->get('/', function ($request, $response, $args) {
+$app->get('/old', function ($request, $response, $args) {
     return $this->renderer->render($response, 'index.phtml', $args);
 });
 
-$app->get('/new', function ($request, $response, $args) {
+$app->get('/', function ($request, $response, $args) {
     return $this->renderer->render($response, 'new.phtml', $args);
 });
 
@@ -78,5 +78,5 @@ $app->post('/', function ($request, $response, $args) {
     $args['outPic'] = $outPic;
     $args['outPicF'] = $outPicF;
 
-    return $this->renderer->render($response, 'index.phtml', $args);
+    return $this->renderer->render($response, 'new.phtml', $args);
 });
