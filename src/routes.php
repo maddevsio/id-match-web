@@ -50,19 +50,9 @@ $app->post('/', function ($request, $response, $args) {
     ///////////
 
     exec("idmatchd -c $faceFilePath $idFilePath", $output);
-    $idmResult = $output[0];
 
-    if ($idmResult == "200 1") {
-        print("СОВПАДЕНИЕ");
-    }
-    if ($idmResult == "200 0") {
-        print("Возможное совпадение");
-    }
-    if ($idmResult == "200 -1") {
-        print("Не совпадают");
-    }
-
-    print("<br><br><b>РАСПОЗНАННЫЕ ДАННЫЕ С АЙДИШКИ:</b><br>");
+    $matchResult = json_decode(implode("\n", $output));
+    print_r($matchResult);
 
     $outPic = md5(microtime(true)).".png";
     $outPicF = md5(microtime(true))."F.png";
