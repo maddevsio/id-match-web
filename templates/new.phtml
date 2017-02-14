@@ -4,7 +4,6 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=0">
     <meta name="format-detection" content="telephone=no">
-
     <title>NEW ID Match</title>
     <link rel="stylesheet" href="./dist/styles.css">
 </head>
@@ -128,13 +127,63 @@
                 <input type="submit" class="inputfile" disabled="disabled" id="submit_btn">
             </div>
         </form>
-        <p>
         <?php if (isset($outPic)) : ?>
-            <img src="/images/<?= htmlspecialchars($outPicF); ?>">
-            <br><br>
-            <img src="/images/<?= htmlspecialchars($outPic); ?>">
+            <div class="results">
+                <div class="results-images correct">
+                    <div class="results-images--item-wrap">
+                        <img src="./images/chuck.png" alt="">
+                    </div>
+                    <div class="results-info">
+                        Совпадение <i>77%</i>
+                    </div>
+                    <div class="results-images--item-wrap">
+                        <img src="./images/id-chuck.png" alt="">
+                    </div>
+                </div>
+                <div class="results-code">
+                    <div class="title">Распознанные данные:</div>
+                    <div class="results-code--wrap">
+                        <div class="inst">
+                            <div class="inst-info--console">
+                                <div class="inst-info--console_header">
+                                    <span class="close"></span>
+                                    <span class="minimize"></span>
+                                    <span class="maximize"></span>
+                                </div>
+                                <div class="code-snippet__content">
+                                    <code class="lines">
+                                            {<br>
+                                            &nbsp;&nbsp;"OCR": { <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;"serial": "<span class="string">0241456789</span>,<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;"firstname": "<span class="string">Александра</span>",<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;"surname": "<span class="string">Александрова</span>",<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;"secondname": "<span class="string">Александровна</span>",<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;"pob": "<span class="string">Петропавловск</span>",<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;"birthday": "<span class="string">22.03.1987</span>",<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;"date1": "<span class="string">12.03.2013</span>",<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;"gender": "<span class="string">Ж</span>"<br>
+                                            &nbsp;&nbsp;}, <br>
+                                            &nbsp;&nbsp;"Match": { <br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;"code": "<span class="string">200</span>",<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;"message": "<span class="string">Match</span>",<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;"int": "<span class="string">1</span>",<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;"float": "<span class="string">58.514</span>"<br>
+                                            &nbsp;&nbsp;} <br>
+                                            }<br>
+                                    </code>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+<!--            <img src="/images/--><?//= htmlspecialchars($outPicF); ?><!--">-->
+<!--            <br><br>-->
+<!--            <img src="/images/--><?//= htmlspecialchars($outPic); ?><!--">-->
         <?php endif; ?>
-        </p>
 <!--        <div class="camera">-->
 <!--            <video id="video">Video stream not available.</video>-->
 <!--            <button id="startbutton">Take photo</button>-->
