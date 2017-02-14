@@ -154,3 +154,17 @@ $(function () {
         }
     });
 });
+
+function getPercentClass(percent) {
+    if(percent <= 50) {
+        return 'failed';
+    }else if(percent <= 70){
+        return 'normal';
+    }
+    return 'correct';
+}
+
+$(function () {
+   var percent = parseInt($('.match-percent').text());
+   $('.results-images').addClass(getPercentClass(percent));
+});

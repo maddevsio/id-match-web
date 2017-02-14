@@ -129,13 +129,13 @@
         </form>
         <?php if (isset($outPic)) : ?>
             <div class="results">
-                <div class="results-images correct">
+                <div class="results-images">
                     <div class="results-images--item-wrap">
                         <img src="/images/<?= htmlspecialchars($outPicF); ?>">
 <!--                        <img src="./images/chuck.png" alt="">-->
                     </div>
                     <div class="results-info">
-                        Совпадение <i><?= htmlspecialchars($matchPercent); ?>%</i>
+                        Совпадение <span><i class="match-percent"><?= htmlspecialchars($matchPercent); ?></i><i>%</i></span>
                     </div>
                     <div class="results-images--item-wrap">
                             <img src="/images/<?= htmlspecialchars($outPic); ?>">
