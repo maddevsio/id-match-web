@@ -52,7 +52,7 @@ $app->post('/', function ($request, $response, $args) {
     exec("idmatchd -c $faceFilePath $idFilePath", $output);
 
     $matchResult = json_decode(implode("\n", $output));
-    print_r($matchResult);
+    $args['matchPercent'] = intval($matchResult->float);
 
     $outPic = md5(microtime(true)).".png";
     $outPicF = md5(microtime(true))."F.png";
