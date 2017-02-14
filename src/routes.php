@@ -67,5 +67,8 @@ $app->post('/', function ($request, $response, $args) {
     $args['jsonMatch'] = implode("\n", $outputMatch);
     $args['jsonOCR'] = implode("\n", $outputOCR);
 
+    var_dump(json_decode($outputMatch));
+    var_dump(json_decode($outputOCR));
+
     return $this->renderer->render($response, 'new.phtml', $args);
 });
