@@ -153,6 +153,12 @@ $(function () {
             }
         }
     });
+    $('.submit label').click(function (e) {
+        if($(e.target).closest('div').find('input').attr('disabled')){
+        } else{
+            $('.submit_icon').addClass('submit_rotate');
+        }
+    });
 });
 
 function getPercentClass(percent) {

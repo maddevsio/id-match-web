@@ -51,8 +51,13 @@
 .submit{
   label{
     background: #3360a3;
-    img{
+    span{
       border-right: 1px solid #4998F5;
+      margin-right: 10px;
+    }
+    img{
+      border-right: none;
+      margin-right: 0;
     }
   }
 }
@@ -81,9 +86,22 @@
     fill: #30b76c;
   }
 }
-
 #arrows_dock.animate{
   path{
     fill: #fac478;
+  }
+}
+.submit_rotate{
+  animation-name: rotation;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes rotation {
+  0% {
+    transform:rotate(0deg);
+  }
+  100% {
+    transform:rotate(360deg);
   }
 }

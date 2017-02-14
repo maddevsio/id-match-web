@@ -121,7 +121,9 @@
             </svg>
             <div class="submit disabled">
                 <label for="submit_btn">
-                    <img width="40px" src="../icons/icon_reload.svg" alt="">
+                    <span class="icon-wrap">
+                        <img class="submit_icon" width="40px" src="../icons/icon_reload.svg" alt="">
+                    </span>
                     <i>Отправить в ИИ</i>
                 </label>
                 <input type="submit" class="inputfile" disabled="disabled" id="submit_btn">
@@ -154,24 +156,24 @@
                                 </div>
                                 <div class="code-snippet__content">
                                     <code class="lines">
-                                            {<br>
-                                            &nbsp;&nbsp;"OCR": { <br>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;"serial": "<span class="string"><?= $ocrObj->serial?></span>,<br>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;"firstname": "<span class="string"><?= $ocrObj->firstname?></span>",<br>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;"surname": "<span class="string"><?= $ocrObj->surname?></span>",<br>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;"secondname": "<span class="string"><?= $ocrObj->secondname?></span>",<br>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;"nationality": "<span class="string"><?= $ocrObj->nationality?></span>",<br>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;"birthday": "<span class="string"><?= $ocrObj->birthday?></span>",<br>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;"inn": "<span class="string"><?= $ocrObj->inn?></span>",<br>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;"gender": "<span class="string"><?= $ocrObj->gender?></span>"<br>
-                                            &nbsp;&nbsp;}, <br>
-                                            &nbsp;&nbsp;"Match": { <br>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;"code": "<span class="string"><?= $matchObj->code?></span>",<br>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;"message": "<span class="string"><?= $matchObj->message?></span>",<br>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;"int": "<span class="string"><?= $matchObj->int?></span>",<br>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;"float": "<span class="string"><?= $matchObj->float?></span>"<br>
-                                            &nbsp;&nbsp;} <br>
-                                            }<br>
+                                        {<br>
+                                        &nbsp;&nbsp;"OCR": { <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"serial": "<span class="string"><?= $ocrObj->serial?></span>",<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"firstname": "<span class="string"><?= $ocrObj->firstname?></span>",<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"surname": "<span class="string"><?= $ocrObj->surname?></span>",<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"secondname": "<span class="string"><?= $ocrObj->secondname?></span>",<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"nationality": "<span class="string"><?= $ocrObj->nationality?></span>",<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"birthday": "<span class="string"><?= $ocrObj->birthday?></span>",<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"inn": "<span class="string"><?= $ocrObj->inn?></span>",<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"gender": "<span class="string"><?= $ocrObj->gender?></span>"<br>
+                                        &nbsp;&nbsp;}, <br>
+                                        &nbsp;&nbsp;"Match": { <br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"code": "<span class="string"><?= $matchObj->code?></span>",<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"message": "<span class="string"><?= $matchObj->message?></span>",<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"int": "<span class="string"><?= $matchObj->int?></span>",<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;"float": "<span class="string"><?= $matchObj->float?></span>"<br>
+                                        &nbsp;&nbsp;} <br>
+                                        }<br>
                                     </code>
                                 </div>
                             </div>
