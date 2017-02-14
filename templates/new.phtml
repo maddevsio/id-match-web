@@ -155,10 +155,8 @@
                                 <div class="code-snippet__content">
                                     <code class="lines">
                                             {<br>
-                                            <? var_dump(json_decode($jsonMatch)); ?>
-                                            <? var_dump(json_decode($jsonOCR)); ?>
                                             &nbsp;&nbsp;"OCR": { <br>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;"serial": "<span class="string">0241456789</span>,<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;"serial": "<span class="string"><?= $ocrObj->serial?></span>,<br>
                                             &nbsp;&nbsp;&nbsp;&nbsp;"firstname": "<span class="string">Александра</span>",<br>
                                             &nbsp;&nbsp;&nbsp;&nbsp;"surname": "<span class="string">Александрова</span>",<br>
                                             &nbsp;&nbsp;&nbsp;&nbsp;"secondname": "<span class="string">Александровна</span>",<br>

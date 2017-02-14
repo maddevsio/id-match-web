@@ -49,16 +49,18 @@ $app->post('/', function ($request, $response, $args) {
 
     ///////////
 
-    exec("idmatchd -c $faceFilePath $idFilePath", $outputMatch);
-    print implode("\n", $outputMatch);
+    //exec("idmatchd -c $faceFilePath $idFilePath", $outputMatch);
+    $outputMatch = array('{ "code" : "200", "message" : "Match", "int" : "1", "float" : "58.514" } ');
 
     $matchResult = json_decode(implode("\n", $outputMatch));
     $args['matchPercent'] = intval($matchResult->float);
 
     $outPic = md5(microtime(true)).".png";
     $outPicF = md5(microtime(true))."F.png";
-    exec("idcardocr $idFilePath ./public/images/$outPic | node ./region-kir.js", $outputOCR);
-    print implode("\n", $outputOCR);
+    //exec("idcardocr $idFilePath ./public/images/$outPic | node ./region-kir.js", $outputOCR);
+
+    $outputOCR = array('{"serial":"AN444344","firstname":"ОНТОН","surname":"ВАСЕВ","secondname":"ЮРЬЕВИЧ","nationality":"ОРУС","birthday":"11091992","inn":"21679196701007","gender":"Э"}');
+    $ocrResult = json_decode(implode("\n", $outputOCR));
 
     // рисуем регион на лице
     exec("idmatchd -a $faceFilePath ./public/images/$outPicF");
@@ -66,8 +68,12 @@ $app->post('/', function ($request, $response, $args) {
 
     $args['outPic'] = $outPic;
     $args['outPicF'] = $outPicF;
-    $args['jsonMatch'] = implode("\n", $outputMatch);
-    $args['jsonOCR'] = implode("\n", $outputOCR);
+    $args['matchObj'] = $matchResult;
+    $args['ocrObj'] = $ocrResult;
+
+    print "<pre>";
+    var_dump($matchResult);
+    var_dump($ocrResult);
 
     return $this->renderer->render($response, 'new.phtml', $args);
 });
