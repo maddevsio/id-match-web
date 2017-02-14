@@ -67,6 +67,8 @@ $app->post('/', function ($request, $response, $args) {
     $args['jsonMatch'] = implode("\n", $outputMatch);
     $args['jsonOCR'] = implode("\n", $outputOCR);
 
+    print json_decode(implode("\n", $outputMatch));
+
     var_dump(json_decode(implode("\n", $outputMatch)));
     var_dump(json_decode(implode("\n", $outputOCR)));
 
