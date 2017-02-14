@@ -49,17 +49,14 @@ $app->post('/', function ($request, $response, $args) {
 
     ///////////
 
-    exec("idmatchd -c $faceFilePath $idFilePath", $output);
+    exec("idmatchd -c $faceFilePath $idFilePath", $outputMatch);
 
-    $matchResult = json_decode(implode("\n", $output));
+    $matchResult = json_decode(implode("\n", $outputMatch));
     $args['matchPercent'] = intval($matchResult->float);
 
     $outPic = md5(microtime(true)).".png";
     $outPicF = md5(microtime(true))."F.png";
-    exec("idcardocr $idFilePath ./public/images/$outPic | node ./region-kir.js", $output);
-    foreach ($output as $line) {
-        print("$line<br>");
-    }
+    exec("idcardocr $idFilePath ./public/images/$outPic | node ./region-kir.js", $outputOCR);
 
     // рисуем регион на лице
     exec("idmatchd -a $faceFilePath ./public/images/$outPicF");
@@ -67,7 +64,8 @@ $app->post('/', function ($request, $response, $args) {
 
     $args['outPic'] = $outPic;
     $args['outPicF'] = $outPicF;
-    $args['json'] = implode("\n", $output);
+    $args['jsonMatch'] = implode("\n", $outputMatch);
+    $args['jsonOCR'] = implode("\n", $outputOCR);
 
     return $this->renderer->render($response, 'new.phtml', $args);
 });
