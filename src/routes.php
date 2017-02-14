@@ -77,6 +77,7 @@ $app->post('/', function ($request, $response, $args) {
 
     $args['outPic'] = $outPic;
     $args['outPicF'] = $outPicF;
+    $args['json'] = implode("\n", $output);
 
     return $this->renderer->render($response, 'new.phtml', $args);
 });
