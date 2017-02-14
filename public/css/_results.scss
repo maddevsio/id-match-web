@@ -5,10 +5,12 @@
   flex-wrap: wrap;
   margin-bottom: 60px;
   .results-images--item-wrap{
+    width: 100%;
     max-width: 400px;
     padding: 18px;
     height: 400px;
     display: flex;
+    justify-content: center;
     align-items: center;
     img{
       object-fit: contain;
