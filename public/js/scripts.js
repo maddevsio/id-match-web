@@ -63,21 +63,35 @@ $(function () {
     });
     $('#id').change(function () {
         var fileName = $(this).val();
+        var webcam = $('#webcam-face').val();
+        console.log(webcam);
         var dock_label = $(this).closest('#document').find(".filename");
         var photo_val = $('#face').val();
         fileName = fileName.replace('C:\\fakepath\\','');
         if(!fileName && photo_val){
+            console.log('043434343434343-');
             dock_label.removeClass('add_item');
             fileName = dock_label.data('message');
             $('#arrows_dock').removeClass('animate');
             $('.submit').addClass('disabled');
             $('#submit_btn').attr('disabled', true);
         }
-        else if (!fileName){
+        else if (!fileName && webcam){
+            console.log('0-0-0-0-0-0-0-0-0-0-');
             fileName = dock_label.data('message');
             $('.submit').addClass('disabled');
             $('#submit_btn').attr('disabled', true);
-        }else if(photo_val){
+            $('#arrows_dock').removeClass('animate');
+        }
+        else if(webcam && fileName){
+            console.log('-=--=-=-==-=-=-=-=-=-=');
+            dock_label.addClass('add_item');
+            $('.submit').removeClass('disabled');
+            $('#submit_btn').removeAttr('disabled');
+            $('#arrows_dock').addClass('animate');
+        }
+        else if(photo_val){
+            console.log('1232321312321321');
             dock_label.addClass('add_item');
             $('#arrows_dock').addClass('animate');
             $('.submit').removeClass('disabled');
@@ -196,6 +210,9 @@ $(function () {
         var data = $('#canvas')[0].toDataURL('image/png');
         addphoto(data);
         $('#takePhoto').fadeOut();
+        $('#arrows').addClass('animate');
+        $('.my_scan').removeClass('disabled');
+        $('#id').removeAttr('disabled');
         if(video){
             stopWebcam();
         }
