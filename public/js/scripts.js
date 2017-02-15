@@ -1,3 +1,14 @@
+var width = 480;
+var height = 0;
+
+var streaming = false;
+
+var video = null;
+var canvas = null;
+var photo = null;
+var startbutton = null;
+var streamObj = null;
+
 $(function () {
     $("#typed").typed({
         stringsElement: $('#typed-strings'),
@@ -20,69 +31,6 @@ $(function () {
                 }, 100
             );
         }
-    });
-});
-
-$(function () {
-    var width = 480;
-    var height = 0;
-
-    var streaming = false;
-
-    var video = null;
-    var canvas = null;
-    var photo = null;
-    var startbutton = null;
-
-
-    $(function startup() {
-        video = document.getElementById('video');
-        canvas = document.getElementById('canvas');
-        photo = document.getElementById('photo');
-        startbutton = document.getElementById('startbutton');
-
-        navigator.mediaDevices.getUserMedia({video: true, audio: false})
-            .then(function (stream) {
-                video.srcObject = stream;
-                video.play();
-            })
-            .catch(function (err) {
-                console.log("An error occured! " + err);
-            });
-
-        video.addEventListener('canplay', function (ev) {
-            if (!streaming) {
-                height = video.videoHeight / (video.videoWidth / width);
-                video.setAttribute('width', width);
-                video.setAttribute('height', height);
-                canvas.setAttribute('width', width);
-                canvas.setAttribute('height', height);
-                streaming = true;
-            }
-        }, false);
-
-        startbutton.addEventListener('click', function (ev) {
-            takepicture();
-            ev.preventDefault();
-        }, false);
-
-        function clearphoto() {
-            var context = canvas.getContext('2d');
-            context.fillStyle = "#AAA";
-            context.fillRect(0, 0, canvas.width, canvas.height);
-            addphoto('');
-        }
-        function takepicture() {
-            var context = canvas.getContext('2d');
-            if (width && height) {
-                canvas.width = width;
-                canvas.height = height;
-                context.drawImage(video, 0, 0, width, height);
-            } else {
-                clearphoto();
-            }
-        }
-
     });
 });
 
@@ -167,6 +115,58 @@ function getPercentClass(percent) {
     return 'correct';
 }
 
+function initWebcam() {
+
+    video = document.getElementById('video');
+    canvas = document.getElementById('canvas');
+    photo = document.getElementById('photo');
+    startbutton = document.getElementById('startbutton');
+
+    navigator.mediaDevices.getUserMedia({video: true, audio: false})
+        .then(function (stream) {
+            streamObj = stream;
+            video.srcObject = stream;
+            video.play();
+        })
+        .catch(function (err) {
+            console.log("An error occured! " + err);
+        });
+
+    video.addEventListener('canplay', function (ev) {
+        if (!streaming) {
+            height = video.videoHeight / (video.videoWidth / width);
+            video.setAttribute('width', width);
+            video.setAttribute('height', height);
+            canvas.setAttribute('width', width);
+            canvas.setAttribute('height', height);
+            streaming = true;
+        }
+    }, false);
+
+    startbutton.addEventListener('click', function (ev) {
+        takepicture();
+        ev.preventDefault();
+    }, false);
+
+    function clearphoto() {
+        var context = canvas.getContext('2d');
+        context.fillStyle = "#AAA";
+        context.fillRect(0, 0, canvas.width, canvas.height);
+        addphoto('');
+    }
+    function takepicture() {
+        var context = canvas.getContext('2d');
+        if (width && height) {
+            canvas.width = width;
+            canvas.height = height;
+            context.drawImage(video, 0, 0, width, height);
+        } else {
+            clearphoto();
+        }
+    }
+
+}
+
 $(function () {
    var percent = parseInt($('.match-percent').text());
    $('.results-images').addClass(getPercentClass(percent));
@@ -175,6 +175,7 @@ $(function () {
 $(function () {
     $('#open_takePhoto').click(function () {
         $('#takePhoto').fadeIn();
+        initWebcam();
     });
     $('#startbutton').click(function () {
         $('.camera').addClass('flesh-animation').delay(800).queue(function(){
@@ -191,8 +192,14 @@ $(function () {
         var data = $('#canvas')[0].toDataURL('image/png');
         addphoto(data);
         $('#takePhoto').fadeOut();
+        if(video){
+            streamObj.getTracks().forEach(track => track.stop());
+        }
     });
     $('#close_modal').click(function () {
         $('#takePhoto').fadeOut();
+        if(video){
+            streamObj.getTracks().forEach(track => track.stop());
+        }
     })
 });

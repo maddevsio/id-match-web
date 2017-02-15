@@ -97,11 +97,12 @@
                     <i data-message="Загрузите вашу фотографию" class="filename">Загрузите вашу фотографию</i>
                 </label>
                 <input class="inputfile" type="file" id="face" name="face">
-                <input type="hidden" id="webcam-face">
-                <i class="or">или</i>
-                <button type="button" id="open_takePhoto">
-                    сделайте фотографию
-                    <svg version="1.1" id="Capa_1" width="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+                <div class="webcam_btn">
+                    <input type="hidden" id="webcam-face">
+                    <i class="or">или</i>
+                    <button type="button" id="open_takePhoto">
+                        сделайте фотографию
+                        <svg version="1.1" id="Capa_1" width="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
                         <g>
                             <path d="M55.201,15.5h-8.524l-4-10H17.323l-4,10H12v-5H6v5H4.799C2.152,15.5,0,17.652,0,20.299v29.368
                                 C0,52.332,2.168,54.5,4.833,54.5h50.334c2.665,0,4.833-2.168,4.833-4.833V20.299C60,17.652,57.848,15.5,55.201,15.5z M8,12.5h2v3H8
@@ -115,7 +116,8 @@
                                 s2,0.897,2,2S53.103,25.5,52,25.5z"/>
                         </g>
                     </svg>
-                </button>
+                    </button>
+                </div>
             </div>
             <svg class="arrows" id="arrows" xmlns="http://www.w3.org/2000/svg" width="50px" viewBox="0 0 756.19 477.18">
                 <g id="Capa_1" data-name="Capa 1">
