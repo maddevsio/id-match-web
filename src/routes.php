@@ -12,6 +12,7 @@ $app->get('/', function ($request, $response, $args) {
 
 $app->post('/', function ($request, $response, $args) {
     $files = $request->getUploadedFiles();
+
     if (empty($files['face'])) {
         throw new Exception('Expected a face');
     }

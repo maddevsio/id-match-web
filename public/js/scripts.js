@@ -24,7 +24,7 @@ $(function () {
 });
 
 $(function () {
-    var width = 320;
+    var width = 480;
     var height = 0;
 
     var streaming = false;
@@ -53,7 +53,6 @@ $(function () {
         video.addEventListener('canplay', function (ev) {
             if (!streaming) {
                 height = video.videoHeight / (video.videoWidth / width);
-
                 video.setAttribute('width', width);
                 video.setAttribute('height', height);
                 canvas.setAttribute('width', width);
@@ -71,27 +70,25 @@ $(function () {
             var context = canvas.getContext('2d');
             context.fillStyle = "#AAA";
             context.fillRect(0, 0, canvas.width, canvas.height);
-
-            var data = canvas.toDataURL('image/png');
-            photo.css( "background" , data);
+            addphoto('');
         }
-
         function takepicture() {
             var context = canvas.getContext('2d');
             if (width && height) {
                 canvas.width = width;
                 canvas.height = height;
                 context.drawImage(video, 0, 0, width, height);
-
-                var data = canvas.toDataURL('image/png');
-                $(photo).css('background-image', 'url(' + data + ')');
-                console.log(data)
             } else {
                 clearphoto();
             }
         }
+
     });
 });
+
+function addphoto(image) {
+    $('#webcam-face').val(image);
+}
 
 $(function () {
     $('#face').change(function () {
@@ -173,4 +170,29 @@ function getPercentClass(percent) {
 $(function () {
    var percent = parseInt($('.match-percent').text());
    $('.results-images').addClass(getPercentClass(percent));
+});
+
+$(function () {
+    $('#open_takePhoto').click(function () {
+        $('#takePhoto').fadeIn();
+    });
+    $('#startbutton').click(function () {
+        $('.camera').addClass('flesh-animation').delay(800).queue(function(){
+           $(this).removeClass('flesh-animation').dequeue();
+        });
+        $('#canvas').show();
+        $('#apply, #cancel').addClass('show');
+    });
+    $('#cancel').click(function () {
+        $('#canvas').hide();
+        $('#apply, #cancel').removeClass('show');
+    });
+    $('#apply').click(function () {
+        var data = $('#canvas')[0].toDataURL('image/png');
+        addphoto(data);
+        $('#takePhoto').fadeOut();
+    });
+    $('#close_modal').click(function () {
+        $('#takePhoto').fadeOut();
+    })
 });
