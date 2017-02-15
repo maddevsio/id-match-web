@@ -29,7 +29,13 @@ $app->post('/', function ($request, $response, $args) {
         $faceFilePath = "/tmp/{$rand}-{$uploadFileName}";
         $files['face']->moveTo($faceFilePath);
     } else {
-        throw new Exception("Ошибка загрузки файла лица");
+        if (!empty($_POST['faceWebcam'])) {
+            $rand = md5(microtime(true));
+            $faceFilePath = "/tmp/{$rand}-faceFromWebcam.png";
+            file_put_contents($faceFilePath, base64_decode(str_replace('data:image/png;base64,', '', $_POST['faceWebcam'])));
+        } else {
+            throw new Exception("Ошибка загрузки файла лица");
+        }
     }
 
     if ($files['id']->getError() === UPLOAD_ERR_OK) {
