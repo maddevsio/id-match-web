@@ -167,6 +167,10 @@ function initWebcam() {
 
 }
 
+function stopWebcam() {
+    streamObj.getTracks().forEach(track => track.stop());
+}
+
 $(function () {
    var percent = parseInt($('.match-percent').text());
    $('.results-images').addClass(getPercentClass(percent));
@@ -193,13 +197,13 @@ $(function () {
         addphoto(data);
         $('#takePhoto').fadeOut();
         if(video){
-            streamObj.getTracks().forEach(track => track.stop());
+            stopWebcam();
         }
     });
     $('#close_modal').click(function () {
         $('#takePhoto').fadeOut();
         if(video){
-            streamObj.getTracks().forEach(track => track.stop());
+            stopWebcam();
         }
     })
 });
