@@ -12,12 +12,17 @@ $app->get('/', function ($request, $response, $args) {
 
 $app->post('/match-and-ocr', function ($request, $response, $args) {
     $files = $request->getUploadedFiles();
+    $error = array();
 
     if (empty($files['face'])) {
-        throw new Exception('Expected a face');
+        $error["error"] = 'Expected a face';
+        print json_encode($error);
+        return;
     }
     if (empty($files['id'])) {
-        throw new Exception('Expected an id');
+        $error["error"] = 'Expected an id';
+        print json_encode($error);
+        return;
     }
 
     $faceFilePath = '';
@@ -29,7 +34,9 @@ $app->post('/match-and-ocr', function ($request, $response, $args) {
         $faceFilePath = "/tmp/{$rand}-{$uploadFileName}";
         $files['face']->moveTo($faceFilePath);
     } else {
-        throw new Exception("Ошибка загрузки файла лица");
+        $error["error"] = 'Ошибка загрузки файла лица';
+        print json_encode($error);
+        return;
     }
 
     if ($files['id']->getError() === UPLOAD_ERR_OK) {
@@ -38,33 +45,40 @@ $app->post('/match-and-ocr', function ($request, $response, $args) {
         $idFilePath = "/tmp/{$rand}-{$uploadFileName}";
         $files['id']->moveTo($idFilePath);
     } else {
-        throw new Exception("Ошибка загрузки файла айдишки");
+        $error["error"] = 'Ошибка загрузки файла айдишки';
+        print json_encode($error);
+        return;
     }
 
     if (empty($faceFilePath)) {
-        throw new Exception('Вы не зааплоадили лицо');
+        $error["error"] = 'Вы не зааплоадили лицо';
+        print json_encode($error);
+        return;
     }
     if (empty($idFilePath)) {
-        throw new Exception('Вы не зааплоадили айдишку');
+        $error["error"] = 'Вы не зааплоадили айдишку';
+        print json_encode($error);
+        return;
     }
 
     ///////////
 
-//    exec("idmatchd -c $faceFilePath $idFilePath", $outputMatch);
-    $outputMatch = array('{ "code" : "200", "message" : "Match", "int" : "1", "float" : "58.514" } ');
+    exec("idmatchd -c $faceFilePath $idFilePath", $outputMatch);
+    //$outputMatch = array('{ "code" : "200", "message" : "Match", "int" : "1", "float" : "58.514" } ');
 
     $matchResult = json_decode(implode("\n", $outputMatch));
     $args['matchPercent'] = intval($matchResult->float);
 
     $outPic = md5(microtime(true)).".png";
     $outPicF = md5(microtime(true))."F.png";
-//    exec("idcardocr $idFilePath ./public/images/$outPic | node ./region-kir.js", $outputOCR);
-    $outputOCR = array('{"serial":"AN444344","firstname":"ОНТОН","surname":"ВАСЕВ","secondname":"ЮРЬЕВИЧ","nationality":"ОРУС","birthday":"11091992","inn":"21679196701007","gender":"Э"}');
+
+    exec("idcardocr $idFilePath ./public/images/$outPic | node ./region-kir.js", $outputOCR);
+    //$outputOCR = array('{"serial":"AN444344","firstname":"ОНТОН","surname":"ВАСЕВ","secondname":"ЮРЬЕВИЧ","nationality":"ОРУС","birthday":"11091992","inn":"21679196701007","gender":"Э"}');
     $ocrResult = json_decode(implode("\n", $outputOCR));
 
     // рисуем регион на лице
-    exec("idmatchd -a $faceFilePath ./public/images/$outPicF");
-    exec("idmatchd -b ./public/images/$outPic ./public/images/$outPic");
+    //exec("idmatchd -a $faceFilePath ./public/images/$outPicF");
+    //exec("idmatchd -b ./public/images/$outPic ./public/images/$outPic");
 
     $res['OCR'] = $ocrResult;
     $res['Match'] = $matchResult;
