@@ -67,7 +67,6 @@ $app->post('/match-and-ocr', function ($request, $response, $args) {
     //$outputMatch = array('{ "code" : "200", "message" : "Match", "int" : "1", "float" : "58.514" } ');
 
     $matchResult = json_decode(implode("\n", $outputMatch));
-    $args['matchPercent'] = intval($matchResult->float);
 
     $outPic = md5(microtime(true)).".png";
     $outPicF = md5(microtime(true))."F.png";
