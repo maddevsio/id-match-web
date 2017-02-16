@@ -118,11 +118,14 @@
   -moz-animation: blink 0.7s infinite;
   animation: blink 0.7s infinite;
 }
-.console-face{
-  color: #30b76c;
-}
-.console-id{
+.console-text{
   color: #fac478;
+}
+.console-line{
+  color: #6233b7;
+}
+.console-link{
+  color: #30b76c;
 }
 .inst-info{
   display: none;
