@@ -10,6 +10,10 @@ $app->get('/', function ($request, $response, $args) {
     return $this->renderer->render($response, 'new.phtml', $args);
 });
 
+$app->post('/match-and-ocr', function ($request, $response, $args) {
+    print("testing");
+});
+
 $app->post('/', function ($request, $response, $args) {
     $files = $request->getUploadedFiles();
 
