@@ -17,17 +17,11 @@ $(function () {
         cursorChar: "&block;",
         callback: function() {
             $('.typed-cursor').hide();
-            var count = 15;
-            var dots = $('#dots');
             var timer = setInterval(
                 function(){
-                    dots.text(dots.text() + '.');
-                    count --;
-                    if(count == 0){
-                        clearInterval(timer);
-                        $('.json_wrap').show();
-                        $('.inst-info').fadeIn('slow');
-                    }
+                    clearInterval(timer);
+                    $('.json_wrap').show();
+                    $('.inst-info').fadeIn('slow');
                 }, 100
             );
         }
