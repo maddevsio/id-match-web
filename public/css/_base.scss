@@ -18,7 +18,8 @@ header{
   //background: #3360a3;
   width: 100%;
   color: #ffffff;
-  background: #3360a3 url('../../icons/bg.jpg');
+  background: #3360a3 url('../../icons/bg.jpg') center  no-repeat;
+  background-size: cover;
 }
 footer{
   height: 90px;
