@@ -9,14 +9,6 @@ body{
   align-items: center;
   font-family: 'Raleway-Light', sans-serif;
 }
-main{
-  flex: 1;
-  overflow: hidden;
-  width: 100%;
-  background: #fafafb;
-  border-top: 1px solid #eff0f3;
-  padding-bottom: 70px;
-}
 i{
   font-style: inherit;
 }
@@ -71,15 +63,4 @@ img{
 }
 code{
   font-family: Lucon-Console,sans-serif;
-}
-.text-wrap{
-  max-width: 720px;
-}
-.about_wrap{
-  ul{
-    li{
-      font-size: 1.2rem;
-      line-height: 1.5;
-    }
-  }
 }
