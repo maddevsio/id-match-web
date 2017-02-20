@@ -91,6 +91,21 @@
     fill: #fac478;
   }
 }
+.info-wrap{
+  position: relative;
+  text-align: center;
+  margin-top: 9px;
+  font-style: italic;
+  font-size: .84rem;
+  font-weight: 900;
+  i{
+    color: #E72530;
+    font-size: 1.4rem;
+    position: absolute;
+    top: -6px;
+    left: -7px;
+  }
+}
 .submit_rotate{
   animation-name: rotation;
   animation-duration: 5s;
