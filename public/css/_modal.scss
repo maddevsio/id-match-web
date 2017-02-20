@@ -73,6 +73,8 @@
   z-index: 2;
   opacity: 0;
   transition: all .7s;
+  width:60px;
+  height:60px;
   &.show{
     opacity: 1;
     transition: all .7s;
@@ -83,6 +85,8 @@
   z-index: 2;
   opacity: 0;
   transition: all .7s;
+  width:60px;
+  height:60px;
   &.show{
     opacity: 1;
     transition: all .7s;
