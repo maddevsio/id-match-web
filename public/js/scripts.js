@@ -12,8 +12,8 @@ var streamObj = null;
 $(function () {
     $("#typed").typed({
         stringsElement: $('#typed-strings'),
-        typeSpeed: -20,
-        startDelay: 2,
+        typeSpeed: -40,
+        startDelay: 0.5,
         cursorChar: "&block;",
         callback: function() {
             $('.typed-cursor').hide();
@@ -22,7 +22,7 @@ $(function () {
                     clearInterval(timer);
                     $('.json_wrap').show();
                     $('.inst-info').fadeIn('slow');
-                }, 100
+                }, 50
             );
         }
     });

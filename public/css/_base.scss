@@ -13,6 +13,11 @@ main{
   flex: 1;
   overflow: hidden;
   width: 100%;
+  background: #fafafb;
+  border-bottom: 1px solid #eff0f3;;
+}
+i{
+  font-style: inherit;
 }
 header{
   //background: #3360a3;
@@ -44,4 +49,9 @@ img{
   text-align: center;
   color: #3360a3;
   margin: 50px auto 40px;
+}
+code{
+  .json_wrap{
+    font-family: Lucon-Console,sans-serif;
+  }
 }
