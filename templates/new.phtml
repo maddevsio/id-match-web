@@ -4,6 +4,14 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=0">
     <meta name="format-detection" content="telephone=no">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="../favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="../favicons/manifest.json">
+    <link rel="mask-icon" href="../favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
     <title>IDMATCH &mdash; Машинное обучение на службе у финансовых организаций/страховых компаний/брокеров/государства</title>
     <link rel="stylesheet" href="./dist/styles.css">
 </head>
@@ -20,7 +28,7 @@
                 </svg>
                 IDMATCH
             </a>
-            <ul class="munu-wrap">
+            <ul>
                 <li class="menu-wrap--item">
                     <a href="#contacts">Контакты</a>
                 </li>
@@ -76,7 +84,6 @@
                             &nbsp;&nbsp;&nbsp;&nbsp;"float": "<span class="string">68.514</span>"<br>
                             &nbsp;&nbsp;} <br>
                             }<br>
-                            <span class="my-cursor">█</span>
                         </span>
                     </code>
                     <div class="inst-info">
@@ -94,22 +101,21 @@
         </div>
     </section>
 </header>
-<main>
-    <section>
-        <div class="title">Посмотрите как это работает</div>
-        <form class="documents-form" method="POST" action="/" enctype="multipart/form-data">
-            <div id="photo" class="input-wrap my_photo">
-                <label for="face">
-                    <img width="40px" src="../icons/cloud-computing.svg" alt="">
-                    <i data-message="Загрузите вашу фотографию" class="filename">Загрузите вашу фотографию</i>
-                </label>
-                <input class="inputfile" type="file" id="face" name="face">
-                <div class="webcam_btn">
-                    <input name="faceWebcam" type="hidden" id="webcam-face">
-                    <i class="or">или</i>
-                    <button type="button" id="open_takePhoto">
+<section id="form-result">
+    <div class="title">Посмотрите как это работает</div>
+    <form class="documents-form" method="POST" action="/#form-result" enctype="multipart/form-data">
+        <div id="photo" class="input-wrap my_photo">
+            <label for="face">
+                <img width="40px" src="../icons/cloud-computing.svg" alt="">
+                <i data-message="Загрузите вашу фотографию" class="filename">Загрузите вашу фотографию</i>
+            </label>
+            <input class="inputfile" type="file" id="face" name="face">
+            <div class="webcam_btn">
+                <input name="faceWebcam" type="hidden" id="webcam-face">
+                <i class="or">или</i>
+                <button type="button" id="open_takePhoto">
                         <span>сделайте фотографию
-                        <svg version="1.1" id="Capa_1" width="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+                            <svg version="1.1" id="Capa_1" width="20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
                         <g>
                             <path d="M55.201,15.5h-8.524l-4-10H17.323l-4,10H12v-5H6v5H4.799C2.152,15.5,0,17.652,0,20.299v29.368
                                 C0,52.332,2.168,54.5,4.833,54.5h50.334c2.665,0,4.833-2.168,4.833-4.833V20.299C60,17.652,57.848,15.5,55.201,15.5z M8,12.5h2v3H8
@@ -124,97 +130,128 @@
                         </g>
                     </svg>
                         </span>
-
-                    </button>
-                </div>
+                </button>
             </div>
-            <svg class="arrows" id="arrows" xmlns="http://www.w3.org/2000/svg" width="50px" viewBox="0 0 756.19 477.18">
-                <g id="Capa_1" data-name="Capa 1">
-                    <path class="arrow_1" d="M500.24,229.08,275.14,4A13.51,13.51,0,0,0,256,23.08l215.5,215.5L256,454.08a13.55,13.55,0,0,0,9.5,23.1,13.17,13.17,0,0,0,9.5-4l225.1-225.1A13.43,13.43,0,0,0,500.24,229.08Z"/>
-                    <path class="arrow_2" d="M248.18,229.08,23.08,4A13.51,13.51,0,1,0,4,23.08l215.5,215.5L4,454.08a13.46,13.46,0,0,0,0,19.1,13.59,13.59,0,0,0,9.5,4,13.17,13.17,0,0,0,9.5-4l225.1-225.1A13.43,13.43,0,0,0,248.18,229.08Z"/>
-                    <path class="arrow_3" d="M752.3,229.08,527.2,4a13.51,13.51,0,1,0-19.1,19.1l215.5,215.5L508.1,454.08a13.55,13.55,0,0,0,9.5,23.1,13.17,13.17,0,0,0,9.5-4l225.1-225.1A13.43,13.43,0,0,0,752.3,229.08Z"/>
-                </g>
-            </svg>
-            <div id="document" class="input-wrap my_scan disabled">
-                <label for="id">
-                    <img width="40px" src="../icons/id-card.svg" alt="">
-                    <i data-message="Загрузите изображение вашего документа" class="filename">Загрузите изображение вашего документа</i>
-                </label>
-                <input disabled="disabled" class="inputfile" type="file" id="id" name="id">
-                <div class="info-wrap">
-                    <i>*</i>Распознаем ID-карты Кыргызской Республики
-                </div>
+        </div>
+        <svg class="arrows" id="arrows" xmlns="http://www.w3.org/2000/svg" width="50px" viewBox="0 0 756.19 477.18">
+            <g id="Capa_1" data-name="Capa 1">
+                <path class="arrow_1" d="M500.24,229.08,275.14,4A13.51,13.51,0,0,0,256,23.08l215.5,215.5L256,454.08a13.55,13.55,0,0,0,9.5,23.1,13.17,13.17,0,0,0,9.5-4l225.1-225.1A13.43,13.43,0,0,0,500.24,229.08Z"/>
+                <path class="arrow_2" d="M248.18,229.08,23.08,4A13.51,13.51,0,1,0,4,23.08l215.5,215.5L4,454.08a13.46,13.46,0,0,0,0,19.1,13.59,13.59,0,0,0,9.5,4,13.17,13.17,0,0,0,9.5-4l225.1-225.1A13.43,13.43,0,0,0,248.18,229.08Z"/>
+                <path class="arrow_3" d="M752.3,229.08,527.2,4a13.51,13.51,0,1,0-19.1,19.1l215.5,215.5L508.1,454.08a13.55,13.55,0,0,0,9.5,23.1,13.17,13.17,0,0,0,9.5-4l225.1-225.1A13.43,13.43,0,0,0,752.3,229.08Z"/>
+            </g>
+        </svg>
+        <div id="document" class="input-wrap my_scan disabled">
+            <label for="id">
+                <img width="40px" src="../icons/id-card.svg" alt="">
+                <i data-message="Загрузите изображение вашего документа" class="filename">Загрузите изображение вашего документа</i>
+            </label>
+            <input disabled="disabled" class="inputfile" type="file" id="id" name="id">
+            <div class="info-wrap">
+                <i>*</i>Распознаем ID-карты Кыргызской Республики
             </div>
-            <svg class="arrows" id="arrows_dock" xmlns="http://www.w3.org/2000/svg" width="50px" viewBox="0 0 756.19 477.18">
-                <g id="Capa_1" data-name="Capa 1">
-                    <path class="arrow_1" d="M500.24,229.08,275.14,4A13.51,13.51,0,0,0,256,23.08l215.5,215.5L256,454.08a13.55,13.55,0,0,0,9.5,23.1,13.17,13.17,0,0,0,9.5-4l225.1-225.1A13.43,13.43,0,0,0,500.24,229.08Z"/>
-                    <path class="arrow_2" d="M248.18,229.08,23.08,4A13.51,13.51,0,1,0,4,23.08l215.5,215.5L4,454.08a13.46,13.46,0,0,0,0,19.1,13.59,13.59,0,0,0,9.5,4,13.17,13.17,0,0,0,9.5-4l225.1-225.1A13.43,13.43,0,0,0,248.18,229.08Z"/>
-                    <path class="arrow_3" d="M752.3,229.08,527.2,4a13.51,13.51,0,1,0-19.1,19.1l215.5,215.5L508.1,454.08a13.55,13.55,0,0,0,9.5,23.1,13.17,13.17,0,0,0,9.5-4l225.1-225.1A13.43,13.43,0,0,0,752.3,229.08Z"/>
-                </g>
-            </svg>
-            <div class="submit disabled">
-                <label for="submit_btn">
+        </div>
+        <svg class="arrows" id="arrows_dock" xmlns="http://www.w3.org/2000/svg" width="50px" viewBox="0 0 756.19 477.18">
+            <g id="Capa_1" data-name="Capa 1">
+                <path class="arrow_1" d="M500.24,229.08,275.14,4A13.51,13.51,0,0,0,256,23.08l215.5,215.5L256,454.08a13.55,13.55,0,0,0,9.5,23.1,13.17,13.17,0,0,0,9.5-4l225.1-225.1A13.43,13.43,0,0,0,500.24,229.08Z"/>
+                <path class="arrow_2" d="M248.18,229.08,23.08,4A13.51,13.51,0,1,0,4,23.08l215.5,215.5L4,454.08a13.46,13.46,0,0,0,0,19.1,13.59,13.59,0,0,0,9.5,4,13.17,13.17,0,0,0,9.5-4l225.1-225.1A13.43,13.43,0,0,0,248.18,229.08Z"/>
+                <path class="arrow_3" d="M752.3,229.08,527.2,4a13.51,13.51,0,1,0-19.1,19.1l215.5,215.5L508.1,454.08a13.55,13.55,0,0,0,9.5,23.1,13.17,13.17,0,0,0,9.5-4l225.1-225.1A13.43,13.43,0,0,0,752.3,229.08Z"/>
+            </g>
+        </svg>
+        <div class="submit disabled">
+            <label for="submit_btn">
                     <span class="icon-wrap">
                         <img class="submit_icon" width="40px" src="../icons/icon_reload.svg" alt="">
                     </span>
-                    <i>Отправить в ИИ</i>
-                </label>
-                <input type="submit" class="inputfile" disabled="disabled" id="submit_btn">
-            </div>
-        </form>
-        <?php if (isset($outPic)) : ?>
-            <div class="results">
-                <div class="results-images">
-                    <div class="results-images--item-wrap">
-                        <img src="/images/<?= htmlspecialchars($outPicF); ?>">
-<!--                        <img src="./images/chuck.png" alt="">-->
-                    </div>
-                    <div class="results-info">
-                        Совпадение <span><i class="match-percent"><?= htmlspecialchars($matchPercent); ?></i><i>%</i></span>
-                    </div>
-                    <div class="results-images--item-wrap">
-                            <img src="/images/<?= htmlspecialchars($outPic); ?>">
-<!--                        <img src="./images/id-chuck.png" alt="">-->
-                    </div>
+                <i>Отправить в ИИ</i>
+            </label>
+            <input type="submit" class="inputfile" disabled="disabled" id="submit_btn">
+        </div>
+    </form>
+    <?php if (isset($outPic)) : ?>
+        <div class="results">
+            <div class="results-images">
+                <div class="results-images--item-wrap">
+                    <img src="/images/<?= htmlspecialchars($outPicF); ?>">
+                    <!--                        <img src="./images/chuck.png" alt="">-->
                 </div>
-                <div class="results-code">
-                    <div class="title">Распознанные данные:</div>
-                    <div class="results-code--wrap">
-                        <div class="inst">
-                            <div class="inst-info--console">
-                                <div class="inst-info--console_header">
-                                    <span class="close"></span>
-                                    <span class="minimize"></span>
-                                    <span class="maximize"></span>
-                                </div>
-                                <div class="code-snippet__content">
-                                    <code class="lines">
-                                        {<br>
-                                        &nbsp;&nbsp;"OCR": { <br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;"serial": "<span class="string"><?= $ocrObj->serial?></span>",<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;"firstname": "<span class="string"><?= $ocrObj->firstname?></span>",<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;"surname": "<span class="string"><?= $ocrObj->surname?></span>",<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;"secondname": "<span class="string"><?= $ocrObj->secondname?></span>",<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;"nationality": "<span class="string"><?= $ocrObj->nationality?></span>",<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;"birthday": "<span class="string"><?= $ocrObj->birthday?></span>",<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;"inn": "<span class="string"><?= $ocrObj->inn?></span>",<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;"gender": "<span class="string"><?= $ocrObj->gender?></span>"<br>
-                                        &nbsp;&nbsp;}, <br>
-                                        &nbsp;&nbsp;"Match": { <br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;"code": "<span class="string"><?= $matchObj->code?></span>",<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;"message": "<span class="string"><?= $matchObj->message?></span>",<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;"int": "<span class="string"><?= $matchObj->int?></span>",<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;"float": "<span class="string"><?= $matchObj->float?></span>"<br>
-                                        &nbsp;&nbsp;} <br>
-                                        }<br>
-                                    </code>
-                                </div>
+                <div class="results-info">
+                    Совпадение <span><i class="match-percent"><?= htmlspecialchars($matchPercent); ?></i><i>%</i></span>
+                </div>
+                <div class="results-images--item-wrap">
+                    <img src="/images/<?= htmlspecialchars($outPic); ?>">
+                    <!--                        <img src="./images/id-chuck.png" alt="">-->
+                </div>
+            </div>
+            <div class="results-code">
+                <div class="title">Распознанные данные:</div>
+                <div class="results-code--wrap">
+                    <div class="inst">
+                        <div class="inst-info--console">
+                            <div class="inst-info--console_header">
+                                <span class="close"></span>
+                                <span class="minimize"></span>
+                                <span class="maximize"></span>
+                            </div>
+                            <div class="code-snippet__content">
+                                <code class="lines">
+                                    {<br>
+                                    &nbsp;&nbsp;"OCR": { <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;"serial": "<span class="string"><?= $ocrObj->serial?></span>",<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;"firstname": "<span class="string"><?= $ocrObj->firstname?></span>",<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;"surname": "<span class="string"><?= $ocrObj->surname?></span>",<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;"secondname": "<span class="string"><?= $ocrObj->secondname?></span>",<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;"nationality": "<span class="string"><?= $ocrObj->nationality?></span>",<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;"birthday": "<span class="string"><?= $ocrObj->birthday?></span>",<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;"inn": "<span class="string"><?= $ocrObj->inn?></span>",<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;"gender": "<span class="string"><?= $ocrObj->gender?></span>"<br>
+                                    &nbsp;&nbsp;}, <br>
+                                    &nbsp;&nbsp;"Match": { <br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;"code": "<span class="string"><?= $matchObj->code?></span>",<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;"message": "<span class="string"><?= $matchObj->message?></span>",<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;"int": "<span class="string"><?= $matchObj->int?></span>",<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;"float": "<span class="string"><?= $matchObj->float?></span>"<br>
+                                    &nbsp;&nbsp;} <br>
+                                    }<br>
+                                </code>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        <?php endif; ?>
+        </div>
+    <?php endif; ?>
+</section>
+<main>
+    <section>
+        <div class="about">
+            <div class="title">
+                Тайтл для информационной секции
+            </div>
+            <div class="about_wrap">
+                <p>
+                    Одна из самых критичных операций у финансовых организаций/страховых компаний/брокеров/государства это идентификация личности. Особенно сейчас, когда локальный офис заменяется Интернетом и клиенту вообще не требуется никуда ходить, все решается через приложение или вебсайт. Однако, на стороне бизнеса процесс идентификации все равно проводится полностью человеком. Наш сервис призван решить это проблему и помочь оператору быстрее принимать решения по инентификации (нейросеть сравнивания лиц) и меньше времени тратить на заполнение данных с фотографий (система распознавания текста с id-карты).
+                </p>
+
+
+                <p>
+                    Более того, мы не пилим огромный кобайн, программно-апаратный комплекс и сложный интерфейс. Мы предоставляем веб-API, которое можно легко встроить в уже работающие системы небольшими силами IT-отдела организации. В будущем мы планируем брать небольшую плату за 1000 обращений, а сейчас система абсолютно бесплатна и мы готовы вместе с ранними последователями ее совместно улучшать и модифицировать.
+                </p>
+                <p>
+                    Смотрите, чтобы было понятнее, наше API можно встроить в:
+                </p>
+                <ul>
+                    <li>в интернет банкинг</li>
+                    <li>мобильные приложения по выдаче экспресс кредитов</li>
+                    <li>в приложения для идентификации водителей UBER-like сервисов</li>
+                    <li>в систему регистрации юридических лиц на сайте государства</li>
+                    <li>и так далее</li>
+                </ul>
+
+                … а еще мы очень гибкие, и можем что-нибудь лично под вас допилить.
+
+                Сейчас мы распознаем id-карты Кыргызской Республики и работаем над Казахстаном, Россией и Сингапуром
+            </div>
+        </div>
     </section>
 </main>
 <div class="modal" id="takePhoto" style="display: none">
@@ -244,6 +281,23 @@
     </div>
 </div>
 <footer id="contacts">
+    <section>
+        <div class="footer-logo">
+            <a href="/" class="logotype">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" href="26d" viewBox="0 0 36 26">
+                    <g id="Layer_1-2" data-name="Layer 1">
+                        <polygon fill="#ffffff" points="0 26 9.36 26 14.4 0 5.04 0 0 26"/>
+                        <path fill="#ffffff" d="M23,0H17V26h6v-.08A13.06,13.06,0,0,0,36,13,13.06,13.06,0,0,0,23,0Z"/>
+                    </g>
+                </svg>
+                IDMATCH
+            </a>
+        </div>
+        <div class="footer-information">
+            Пока что это хобби проект внутри <a href="https://maddevs.io/" target="_blank">Mad Devs</a>. По всем вопросам пишите на
+            <a target="_blank" href="mailto:rock@maddevs.io">rock@maddevs.io</a>
+        </div>
+    </section>
     <script src="./js/jquery-3.1.1.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <script src="./js/typed.min.js"></script>

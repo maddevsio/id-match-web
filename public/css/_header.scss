@@ -32,28 +32,30 @@
   80% { opacity: 0; }
   100% { opacity: 0; }
 }
-
+.logotype{
+  font-family: 'RobotoSlab-Light', sans-serif;
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  svg{
+    margin-right: 10px;
+  }
+}
 .menu{
   margin: 30px 0 50px;
   display: flex;
   align-items: center;
   color: #ffffff;
   justify-content: space-between;
-  .logotype{
-    font-family: 'RobotoSlab-Light', sans-serif;
-    font-size: 1.2rem;
-    color: #ffffff;
-    text-decoration: none;
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    svg{
-      margin-right: 10px;
+  .menu-wrap--item {
+    list-style: none;
+    a {
+      color: #ffffff;
+      text-decoration: none;
     }
-  }
-  .menu-wrap--item a{
-    color: #ffffff;
-    text-decoration: none;
   }
 }
 .inst-info--prev{
