@@ -29,3 +29,66 @@
     @media only screen and (min-width: $extra-upper-boundary + 1) { @content; }
   }
 }
+@include for-size(all-device-one-line){
+  section{
+    padding: 0;
+  }
+  .information-icons--wrap{
+    margin: 30px auto;
+  }
+  .inst{
+    padding: 0 20px;
+  }
+  .documents-form{
+    flex-direction: column;
+    .input-wrap{
+      margin-bottom: 90px;
+    }
+    .arrows{
+      display: none;
+    }  
+  }
+  .menu, .title, .ident-info, .footer-logo, .footer-information, .description {
+    padding: 0 30px;
+    width: auto;
+  }
+
+  .inst-info{
+    right: 40px;
+  }
+  .information-text{
+    p{
+      padding: 0 30px;
+    }
+  }
+}
+@include for-size(tablet-view){
+  .text-wrapper{
+    margin-left: 130px;
+  }
+  .results-images{
+    padding: 0 30px;
+    justify-content: space-around;
+    .results-images--item-wrap, .results-info{
+      margin-bottom: 40px;
+    }
+  }
+  .information-icons--wrap{
+    justify-content: space-around;
+  }
+  .inst-info, .ident-info-prev, .text-wrapper{
+    display: none !important;
+    width: auto;
+  }
+  #contacts{
+    height: 100%;
+    padding-bottom: 45px;
+    section{
+      flex-wrap: wrap;
+      justify-content: space-around;
+      .footer-logo{
+        margin: 30px auto;
+      }
+    }
+  }
+}
