@@ -22,6 +22,7 @@ i{
 }
 p{
   line-height: 1.5;
+  font-size: 1.2rem;
 }
 header{
   width: 100%;
@@ -70,4 +71,12 @@ img{
 }
 code{
   font-family: Lucon-Console,sans-serif;
+}
+.about_wrap{
+  ul{
+    li{
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+  }
 }
