@@ -30,7 +30,7 @@ footer{
     display: flex;
     height: 100%;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
   }
   .footer-information{
     color: #fff;
@@ -39,6 +39,11 @@ footer{
       color: #E72530;
     }
   }
+}
+.disc{
+  line-height: 1.5;
+  font-size: 1.2rem;
+  margin: 35px auto;
 }
 .mobile-title{
   display: none;
