@@ -24,3 +24,15 @@ Run this command to run the test suite
 	php composer.phar test
 
 That's it! Now go build something cool.
+
+
+##  Сборка стилей
+
+ Для сборки стилей необходимо выполнить следующие:
+
+1. Если у вас уже установлен Node выполните команду `npm install`, если
+нет выполните шаги установки согласно инструкции: [nodejs.org](https://nodejs.org/en/download/package-manager/)
+
+2. Далее вы можете выполнить команду `gulp watch` для отслеживания изменений стилей или выполнить `gulp build` для единовременной их сборки.
+
+Далее вы можете изменять стили в папке /public/css/_*.sccs, они будут скомпилированны в файл /public/dist/styles.css
