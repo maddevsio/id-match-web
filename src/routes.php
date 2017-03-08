@@ -120,7 +120,7 @@ $app->post('/', function ($request, $response, $args) {
         $idFilePath = "/tmp/{$rand}-{$uploadFileName}";
         $files['id']->moveTo($idFilePath);
     } else {
-        throw new Exception("Ошибка загрузки файла айдишки");
+        throw new Exception("Ошибка загрузки файла айдишки. Error code is " . $files['id']->getError());
     }
 
     if (empty($faceFilePath)) {
